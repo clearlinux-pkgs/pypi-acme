@@ -4,13 +4,12 @@
 #
 Name     : pypi-acme
 Version  : 1.27.0
-Release  : 8
+Release  : 9
 URL      : https://files.pythonhosted.org/packages/72/bf/b9c719609e615a3a0e68e2025c2f05933e4bfc0849a2c75f201b5138d7c6/acme-1.27.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/72/bf/b9c719609e615a3a0e68e2025c2f05933e4bfc0849a2c75f201b5138d7c6/acme-1.27.0.tar.gz
 Summary  : ACME protocol implementation in Python
 Group    : Development/Tools
 License  : Apache-2.0
-Requires: pypi-acme-filemap = %{version}-%{release}
 Requires: pypi-acme-license = %{version}-%{release}
 Requires: pypi-acme-python = %{version}-%{release}
 Requires: pypi-acme-python3 = %{version}-%{release}
@@ -26,14 +25,6 @@ BuildRequires : pypi(setuptools)
 
 %description
 ACME protocol implementation in Python
-
-%package filemap
-Summary: filemap components for the pypi-acme package.
-Group: Default
-
-%description filemap
-filemap components for the pypi-acme package.
-
 
 %package license
 Summary: license components for the pypi-acme package.
@@ -55,7 +46,6 @@ python components for the pypi-acme package.
 %package python3
 Summary: python3 components for the pypi-acme package.
 Group: Default
-Requires: pypi-acme-filemap = %{version}-%{release}
 Requires: python3-core
 Provides: pypi(acme)
 Requires: pypi(cryptography)
@@ -83,7 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1652992096
+export SOURCE_DATE_EPOCH=1652993960
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -125,10 +115,6 @@ popd
 
 %files
 %defattr(-,root,root,-)
-
-%files filemap
-%defattr(-,root,root,-)
-/usr/share/clear/filemap/filemap-pypi-acme
 
 %files license
 %defattr(0644,root,root,0755)
