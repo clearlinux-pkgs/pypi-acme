@@ -6,7 +6,7 @@
 #
 Name     : pypi-acme
 Version  : 2.1.0
-Release  : 25
+Release  : 26
 URL      : https://files.pythonhosted.org/packages/50/80/ab64902eb633e9c63c256e105707f602c37725e25633ebdd0756a1e124ee/acme-2.1.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/50/80/ab64902eb633e9c63c256e105707f602c37725e25633ebdd0756a1e124ee/acme-2.1.0.tar.gz
 Source1  : https://files.pythonhosted.org/packages/50/80/ab64902eb633e9c63c256e105707f602c37725e25633ebdd0756a1e124ee/acme-2.1.0.tar.gz.asc
@@ -24,6 +24,9 @@ BuildRequires : pypi(pyrfc3339)
 BuildRequires : pypi(pytz)
 BuildRequires : pypi(requests)
 BuildRequires : pypi(setuptools)
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 
 %description
 ACME protocol implementation in Python
@@ -74,15 +77,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1671036505
+export SOURCE_DATE_EPOCH=1672248582
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
@@ -99,7 +102,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-acme
-cp %{_builddir}/acme-%{version}/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-acme/d095fa0d394cc9417a65aecd0d28e7d10e762f98 || :
+cp %{_builddir}/acme-%{version}/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-acme/d095fa0d394cc9417a65aecd0d28e7d10e762f98
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
