@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x780CC99432A28621 (certbot-team@eff.org)
 #
 Name     : pypi-acme
-Version  : 2.1.0
-Release  : 28
-URL      : https://files.pythonhosted.org/packages/50/80/ab64902eb633e9c63c256e105707f602c37725e25633ebdd0756a1e124ee/acme-2.1.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/50/80/ab64902eb633e9c63c256e105707f602c37725e25633ebdd0756a1e124ee/acme-2.1.0.tar.gz
-Source1  : https://files.pythonhosted.org/packages/50/80/ab64902eb633e9c63c256e105707f602c37725e25633ebdd0756a1e124ee/acme-2.1.0.tar.gz.asc
+Version  : 2.2.0
+Release  : 29
+URL      : https://files.pythonhosted.org/packages/72/bd/31e50657309cafdae7eb22457b5a454272c639510553c6403c016f5a1996/acme-2.2.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/72/bd/31e50657309cafdae7eb22457b5a454272c639510553c6403c016f5a1996/acme-2.2.0.tar.gz
+Source1  : https://files.pythonhosted.org/packages/72/bd/31e50657309cafdae7eb22457b5a454272c639510553c6403c016f5a1996/acme-2.2.0.tar.gz.asc
 Summary  : ACME protocol implementation in Python
 Group    : Development/Tools
 License  : Apache-2.0
@@ -66,10 +66,10 @@ python3 components for the pypi-acme package.
 
 
 %prep
-%setup -q -n acme-2.1.0
-cd %{_builddir}/acme-2.1.0
+%setup -q -n acme-2.2.0
+cd %{_builddir}/acme-2.2.0
 pushd ..
-cp -a acme-2.1.0 buildavx2
+cp -a acme-2.2.0 buildavx2
 popd
 
 %build
@@ -77,7 +77,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1672253127
+export SOURCE_DATE_EPOCH=1673537234
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -102,7 +102,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-acme
-cp %{_builddir}/acme-%{version}/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-acme/d095fa0d394cc9417a65aecd0d28e7d10e762f98
+cp %{_builddir}/acme-%{version}/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-acme/d095fa0d394cc9417a65aecd0d28e7d10e762f98 || :
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
