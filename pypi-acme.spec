@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x447BF683AA3B26C3 (certbot-team@eff.org)
 #
 Name     : pypi-acme
-Version  : 2.3.0
-Release  : 30
-URL      : https://files.pythonhosted.org/packages/d2/aa/a36ce4a2cbee1643f26f1434d568879a70cbe7c3b976c6cedbb430947352/acme-2.3.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/d2/aa/a36ce4a2cbee1643f26f1434d568879a70cbe7c3b976c6cedbb430947352/acme-2.3.0.tar.gz
-Source1  : https://files.pythonhosted.org/packages/d2/aa/a36ce4a2cbee1643f26f1434d568879a70cbe7c3b976c6cedbb430947352/acme-2.3.0.tar.gz.asc
+Version  : 2.4.0
+Release  : 31
+URL      : https://files.pythonhosted.org/packages/e3/64/bada7eaf1e7ecf13cca00f444593d8b375ad33023f94a50f4c3ba9a315b0/acme-2.4.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/e3/64/bada7eaf1e7ecf13cca00f444593d8b375ad33023f94a50f4c3ba9a315b0/acme-2.4.0.tar.gz
+Source1  : https://files.pythonhosted.org/packages/e3/64/bada7eaf1e7ecf13cca00f444593d8b375ad33023f94a50f4c3ba9a315b0/acme-2.4.0.tar.gz.asc
 Summary  : ACME protocol implementation in Python
 Group    : Development/Tools
 License  : Apache-2.0
@@ -66,10 +66,10 @@ python3 components for the pypi-acme package.
 
 
 %prep
-%setup -q -n acme-2.3.0
-cd %{_builddir}/acme-2.3.0
+%setup -q -n acme-2.4.0
+cd %{_builddir}/acme-2.4.0
 pushd ..
-cp -a acme-2.3.0 buildavx2
+cp -a acme-2.4.0 buildavx2
 popd
 
 %build
@@ -77,7 +77,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1676997460
+export SOURCE_DATE_EPOCH=1678286399
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
