@@ -4,10 +4,10 @@
 # Using build pattern: distutils3
 #
 Name     : pypi-acme
-Version  : 2.7.0
-Release  : 34
-URL      : https://files.pythonhosted.org/packages/53/fe/d25df0985f17d48fbe5ae2aa7281152693bf6f70727a0f5031d2656fd616/acme-2.7.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/53/fe/d25df0985f17d48fbe5ae2aa7281152693bf6f70727a0f5031d2656fd616/acme-2.7.0.tar.gz
+Version  : 2.7.1
+Release  : 35
+URL      : https://files.pythonhosted.org/packages/fe/df/c99284c9e2be0a579831ee6bc2e18e70ff44b5deceafd9279a7dbe235e48/acme-2.7.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/fe/df/c99284c9e2be0a579831ee6bc2e18e70ff44b5deceafd9279a7dbe235e48/acme-2.7.1.tar.gz
 Summary  : ACME protocol implementation in Python
 Group    : Development/Tools
 License  : Apache-2.0
@@ -64,10 +64,10 @@ python3 components for the pypi-acme package.
 
 
 %prep
-%setup -q -n acme-2.7.0
-cd %{_builddir}/acme-2.7.0
+%setup -q -n acme-2.7.1
+cd %{_builddir}/acme-2.7.1
 pushd ..
-cp -a acme-2.7.0 buildavx2
+cp -a acme-2.7.1 buildavx2
 popd
 
 %build
@@ -75,7 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1696430046
+export SOURCE_DATE_EPOCH=1697035694
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
