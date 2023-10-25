@@ -1,5 +1,5 @@
 PKG_NAME := pypi-acme
-URL = https://files.pythonhosted.org/packages/60/95/6261bf7f8794ead92e56b76d4b5e2a237e3b3b9edb0bc9b7fc249e8a24d1/acme-2.7.2.tar.gz
+URL = https://files.pythonhosted.org/packages/9f/bd/2c77cd8699b0324755fba5b55237fa86a672d979e79129ee9eee184a0264/acme-2.7.3.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
