@@ -7,7 +7,7 @@
 #
 Name     : pypi-acme
 Version  : 2.11.0
-Release  : 46
+Release  : 47
 URL      : https://files.pythonhosted.org/packages/4b/c8/b2dcfa573137a60f563a7122e539774be6d7b758928f85e4efbb9f339bd1/acme-2.11.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/4b/c8/b2dcfa573137a60f563a7122e539774be6d7b758928f85e4efbb9f339bd1/acme-2.11.0.tar.gz
 Summary  : ACME protocol implementation in Python
