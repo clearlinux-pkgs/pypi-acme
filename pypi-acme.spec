@@ -6,10 +6,10 @@
 # autospec commit: f35655a
 #
 Name     : pypi-acme
-Version  : 3.0.0
-Release  : 49
-URL      : https://files.pythonhosted.org/packages/b8/1b/427989e228687c26d3db34a6749ff0ee5d7f8193ada9101e2b04773beab2/acme-3.0.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/b8/1b/427989e228687c26d3db34a6749ff0ee5d7f8193ada9101e2b04773beab2/acme-3.0.0.tar.gz
+Version  : 3.0.1
+Release  : 50
+URL      : https://files.pythonhosted.org/packages/2a/34/d6d7064afabe02f0043e5015aab664b67fc8bf049e81ac9220526afed3ce/acme-3.0.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/2a/34/d6d7064afabe02f0043e5015aab664b67fc8bf049e81ac9220526afed3ce/acme-3.0.1.tar.gz
 Summary  : ACME protocol implementation in Python
 Group    : Development/Tools
 License  : Apache-2.0
@@ -66,10 +66,10 @@ python3 components for the pypi-acme package.
 
 
 %prep
-%setup -q -n acme-3.0.0
-cd %{_builddir}/acme-3.0.0
+%setup -q -n acme-3.0.1
+cd %{_builddir}/acme-3.0.1
 pushd ..
-cp -a acme-3.0.0 buildavx2
+cp -a acme-3.0.1 buildavx2
 popd
 
 %build
@@ -77,7 +77,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1730839573
+export SOURCE_DATE_EPOCH=1731617207
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
